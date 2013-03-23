@@ -1,0 +1,4 @@
+content     aboutMarks    chrome/content/
+
+component {e9f5ffc0-93ab-11e2-9e96-0800200c9a66} components/aboutMarks.js
+contract @mozilla.org/network/protocol/about;1?what=marks {e9f5ffc0-93ab-11e2-9e96-0800200c9a66}

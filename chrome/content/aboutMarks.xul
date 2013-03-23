@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<overlay id="aboutMarks-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/x-javascript" src="chrome://aboutMarks/content/aboutMarks.js"/>
+
+	<!-- This is optional via options -->
+  <statusbar id="status-bar">
+		<menu class="menu-iconic"
+		      id="aboutMarks-orgmenu"
+					label="AboutMarks">
+		  <menupopup id="aboutMarks-org-menupopup">
+				<menuitem id="aboutMarks-orgsort"
+									label="Menu 1"
+									oncommand="aboutMarks.show();"/>
+		  </menupopup>
+		</menu>
+	</statusbar>
+</overlay>
