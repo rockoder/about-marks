@@ -10,6 +10,15 @@ var aboutMarks = {
 	taggingSvc: Components.classes["@mozilla.org/browser/tagging-service;1"]
 	                           .getService(Components.interfaces.nsITaggingService),
 
+	get_random_color: function () {
+	    var letters = '0123456789ABCDEF'.split('');
+	    var color = '#';
+	    for (var i = 0; i < 6; i++ ) {
+	        color += letters[Math.round(Math.random() * 15)];
+	    }
+	    return color;
+	},
+
 	show: function() {
 
 		alert("start");
@@ -20,10 +29,10 @@ var aboutMarks = {
 		for (var i = 0; i < allTags.length; ++i)
 		{
 			var tag1uris = allTags[i];
-			//alert(tag1uris);
-			data += tag1uris + " ";
+
+			data += "<p>" + tag1uris + " ";
 			data += tag1uris.length - 1;
-			data += "\n";
+			data += "</p>";
 
 			/*var allURLs = aboutMarks.taggingSvc.getURIsForTag(tag1uris);
 
@@ -58,6 +67,24 @@ var aboutMarks = {
 		 
 		  // Data has been written to the file.
 		});
+
+		var pieData = [];
+
+		for (var i = 0; i < allTags.length; ++i) {
+			var ob = {
+				value : aboutMarks.taggingSvc.getURIsForTag(allTags[i]).length,
+				color : aboutMarks.get_random_color()
+			};
+
+			pieData.push(ob);
+	
+			// Creating the Legend for the pie chart. This is temp as Chart.js currently does not support Legend.
+			var dt = "<div class=\"tags\" style=\"background-color:" + ob.color + "\">" + allTags[i] + "</div>";
+			$('#container').append(dt);
+		}
+
+
+		var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
 
 		alert("end");
 	},

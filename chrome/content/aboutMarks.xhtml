@@ -1,3 +1,4 @@
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
@@ -5,10 +6,26 @@
     <title>About Marks</title>
     <link rel="icon" type="image/png" href="chrome://global/skin/icons/information-16.png"/>
     <link rel="stylesheet" href="chrome://global/skin/about.css" type="text/css"/>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script> 
-    <script type="application/javascript;version=1.7" src="chrome://aboutMarks/content/aboutMarks.js"></script>    
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+    <!-- <script type="text/javascript" src="chrome://aboutMarks/content/jquery.min.js"></script> -->
+    <script type="application/javascript;version=1.7" src="chrome://aboutMarks/content/aboutMarks.js"></script>
+    <script type="application/javascript;version=1.7" src="chrome://aboutMarks/content/chartmin.js"></script>
+    <meta name = "viewport" content = "initial-scale = 1, user-scalable = no"></meta>
+    <style>
+      canvas{
+      }
+      .tags {
+        width:100px;
+        height:20px;
+        border:1px solid #000
+      }
+    </style>
   </head>
 
   <body>
+    <canvas id="canvas" height="450" width="450"></canvas>
+    <div id="container">
+      
+    </div>
   </body>
 </html>
